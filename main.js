@@ -1,9 +1,9 @@
 /* Main */
-const roleHarvester = require('roles/harvester');
-const roleUpgrader = require('roles/upgrader');
-const roleBuilder = require('roles/builder');
-const roleDefender = require('roles/defender');
-const botFactory = require('roles/factory');
+const roleHarvester = require('role.harvester');
+const roleUpgrader = require('role.upgrader');
+const roleBuilder = require('role.builder');
+const roleDefender = require('role.defender');
+const botFactory = require('bot.factory');
 
 
 module.exports.loop = function () {
