@@ -10,7 +10,7 @@ const roomController = {
     for (let name in Game.rooms) {
       let room = Game.rooms[name];
       room.creeps = room.find(FIND_MY_CREEPS);
-      console.log(JSON.stringify(room.creeps));
+      console.log(JSON.stringify(room.creeps.name));
       rooms.push(room);
       this.runRoomCreeps(room);
     }
