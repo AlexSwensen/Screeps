@@ -1,0 +1,22 @@
+{
+  "name": "screeps-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexSwensen/screeps-notes.git"
+  },
+  "author": "Alexander Swensen",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/AlexSwensen/screeps-notes/issues"
+  },
+  "homepage": "https://github.com/AlexSwensen/screeps-notes#readme",
+  "dependencies": {
+    "ScreepsAutocomplete": "git+https://github.com/Garethp/ScreepsAutocomplete.git"
+  }
+}
