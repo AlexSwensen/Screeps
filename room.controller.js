@@ -16,7 +16,7 @@ const roomController = {
   },
   runRoomCreeps: function (room) {
     for (let name in room.creeps) {
-      let creep = Game.creeps[name];
+      let creep = room.creeps[name];
       console.log(JSON.stringify(creep));
       if (creep.memory.role == 'harvester') {
         roleHarvester.run(creep);
