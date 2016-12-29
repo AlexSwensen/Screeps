@@ -12,3 +12,5 @@ Bots are built from the `bot.definitions.js` file.
 
 You can change the target number of bots in `settings.js`.
 This will probably be fixed later into a levels system.
+
+If you have any questions or issues, well... you know where to go.
