@@ -19,7 +19,6 @@ module.exports.loop = function () {
     }
   }
 
-  botFactory.updateSpawns();
 
   for (let name in Game.creeps) {
     let creep = Game.creeps[name];

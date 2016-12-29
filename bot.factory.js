@@ -1,5 +1,5 @@
 module.exports = {
-  spawns: game.spawns,
+  spawns: Game.spawns,
   run: () => {
 
   }
