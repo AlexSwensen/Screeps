@@ -27,8 +27,7 @@ module.exports = {
             botDefinitions.basic.harvester.memory);
         }
       }
-    }
-    if (this.creeps.upgraders.size() < settings.upgraders) {
+    } else if (this.creeps.upgraders.size() < settings.upgraders) {
       if (!Game.spawns[this.spawns[0]].spawning) {
         if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.upgrader.body) == OK) {
           Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.upgrader.body,
@@ -36,8 +35,7 @@ module.exports = {
             botDefinitions.basic.upgrader.memory);
         }
       }
-    }
-    if (this.creeps.builders.size() < settings.builders) {
+    } else if (this.creeps.builders.size() < settings.builders) {
       if (!Game.spawns[this.spawns[0]].spawning) {
         if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.builder.body) == OK) {
           Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.builder.body,
@@ -45,8 +43,7 @@ module.exports = {
             botDefinitions.basic.builder.memory);
         }
       }
-    }
-    if (this.creeps.defenders.size() < settings.defenders) {
+    } else if (this.creeps.defenders.size() < settings.defenders) {
       if (!Game.spawns[this.spawns[0]].spawning) {
         if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.defender.body) == OK) {
           Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.defender.body,
