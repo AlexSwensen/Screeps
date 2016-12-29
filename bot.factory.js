@@ -10,6 +10,10 @@ module.exports = {
       defenders: _(Game.creeps).filter({memory: {role: 'defender'}}),
       upgraders: _(Game.creeps).filter({memory: {role: 'upgrader'}})
     };
+
+    if (harvesters.size() > settings.harvesters) {
+      console.log('you dont have enough!');
+    }
     console.log(`you have ${this.creeps.defenders.size()} defenders`);
   }
 };
