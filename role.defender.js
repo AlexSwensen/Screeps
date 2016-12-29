@@ -1,5 +1,5 @@
 module.exports = {
-  run: (creep, room) => {
+  run: creep => {
     creep.memory.target = creep.room.find(FIND_HOSTILE_CREEPS);
     if (creep.memory.target[0]) {
       if (_.some(creep.memory.target[0].body, {type: RANGED_ATTACK})) {
