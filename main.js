@@ -6,6 +6,7 @@ const roleBuilder = require('role.builder');
 
 module.exports.loop = function () {
   for (let name in Game.rooms) {
+    console.log(Game.rooms.length);
     console.log(`Room ${name} has ${Game.rooms[name].energyAvailable} energy`);
   }
 
