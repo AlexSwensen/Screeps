@@ -10,7 +10,7 @@ module.exports.loop = function () {
       const creepMem = Memory.creeps[name];
       console.log(JSON.stringify(creepMem));
       delete Memory.creeps[name];
-      console.log(`Clearing non-existing creep memory: ${name} Type: `);
+      console.log(`Clearing non-existing creep memory: ${name} Role: ${creepMem.role}`);
     }
   }
 
