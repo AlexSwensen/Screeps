@@ -4,7 +4,7 @@ const roleUpgrader = require('role.upgrader');
 const roleBuilder = require('role.builder');
 const roleDefender = require('role.defender');
 const botFactory = require('bot.factory');
-
+const roomController = require('room.controller');
 
 module.exports.loop = function () {
   for (let name in Game.rooms) {
@@ -20,4 +20,7 @@ module.exports.loop = function () {
       console.log('Clearing non-existing creep memory:', name);
     }
   }
+
+  roomController.run();
+
 };
