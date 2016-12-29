@@ -22,7 +22,7 @@ module.exports = {
       console.log('we need more harvesters');
       if (!Game.spawns[this.spawns[0]].spawning) {
 
-        console.log(Game.spawns[this.spawns[0]].spawning);
+        console.log(Game.spawns[this.spawns[0]]);
         console.log('building harvester');
         Game.spawns[this.spawns[0]].createCreep(botDefinitions.harvester);
       }
