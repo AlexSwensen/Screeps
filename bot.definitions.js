@@ -1,8 +1,24 @@
 module.exports = {
   basic: {
-    harvester: [[WORK, CARRY, CARRY, MOVE, MOVE], undefined, {role: 'harvester'}],
-    upgrader: [[WORK, CARRY, CARRY, MOVE, MOVE], undefined, {role: 'upgrader'}],
-    builder: [[WORK, CARRY, CARRY, MOVE, MOVE], undefined, {role: 'builder'}],
-    defender: [[MOVE, MOVE, ATTACK], undefined, {role: 'defender'}]
+    harvester: {
+      body: [WORK, CARRY, CARRY, MOVE, MOVE],
+      name: undefined,
+      memory: {role: 'harvester'}
+    },
+    upgrader: {
+      body: [WORK, CARRY, CARRY, MOVE, MOVE],
+      name: undefined,
+      memory: {role: 'upgrader'}
+    },
+    builder: {
+      body: [WORK, CARRY, CARRY, MOVE, MOVE],
+      name: undefined,
+      memory: {role: 'builder'}
+    },
+    defender: {
+      body: [MOVE, MOVE, ATTACK],
+      name: undefined,
+      memory: {role: 'defender'}
+    }
   }
 };
