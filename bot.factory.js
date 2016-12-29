@@ -1,12 +1,16 @@
+const settings = require('settings');
 module.exports = {
   spawns: Game.spawns,
-  creeps: Game.creeps,
-  update: function () {
-    this.spawns = Game.spawns;
-    this.creeps = Game.creeps;
-  },
+  creeps: [],
   run: function () {
-    this.update();
-    console.log(`you have ${this.creeps.length} units`);
+    this.spawns = Game.spawns;
+    this.creeps = {
+      harvesters: _(Game.creeps).filter({memory: {role: 'harvester'}}),
+      builders: _(Game.creeps).filter({memory: {role: 'builders'}}),
+      defenders: _(Game.creeps).filter({memory: {role: 'defenders'}}),
+      upgraders: _(Game.creeps).filter({memory: {role: 'upgraders'}}),
+
+      console.log(`you have ${defenders.count()} defenders`);
+    };
   }
 };
