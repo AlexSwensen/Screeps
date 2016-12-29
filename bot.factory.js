@@ -16,11 +16,11 @@ module.exports = {
   checkBots: function () {
     if (this.creeps.harvesters.size() < settings.harvesters) {
       console.log('we need more harvesters');
-      if (!this.spawns['Spawn1'].spawning) {
+      if (Game.spawns['Spawn1'].spawning) {
 
         console.log(this.spawns['Spawn1'].spawning);
         console.log('building harvester');
-        this.spawns['Spawn1'].createCreep(botDefinitions.harvester);
+        Game.spawns['Spawn1'].createCreep(botDefinitions.harvester);
       }
     }
   }
