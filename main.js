@@ -20,21 +20,4 @@ module.exports.loop = function () {
       console.log('Clearing non-existing creep memory:', name);
     }
   }
-
-
-  for (let name in Game.creeps) {
-    let creep = Game.creeps[name];
-    if (creep.memory.role == 'harvester') {
-      roleHarvester.run(creep);
-    }
-    if (creep.memory.role == 'upgrader') {
-      roleUpgrader.run(creep);
-    }
-    if (creep.memory.role == 'builder') {
-      roleBuilder.run(creep);
-    }
-    if (creep.memory.role == 'defender') {
-      roleDefender.run(creep);
-    }
-  }
 };

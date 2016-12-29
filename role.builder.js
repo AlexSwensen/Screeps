@@ -2,7 +2,7 @@
 module.exports = {
 
   /** @param {Creep} creep **/
-  run: function (creep) {
+  run: (creep, room) => {
 
     if (creep.memory.building && creep.carry.energy == 0) {
       creep.memory.building = false;
