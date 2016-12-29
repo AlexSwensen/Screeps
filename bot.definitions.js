@@ -16,7 +16,7 @@ module.exports = {
       memory: {role: 'builder'}
     },
     defender: {
-      body: [MOVE, MOVE, ATTACK],
+      body: [MOVE, MOVE, ATTACK, ATTACK],
       name: undefined,
       memory: {role: 'defender'}
     }
