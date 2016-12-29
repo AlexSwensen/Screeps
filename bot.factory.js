@@ -17,6 +17,8 @@ module.exports = {
     if (this.creeps.harvesters.size() < settings.harvesters) {
       console.log('we need more harvesters');
       if (!this.spawns['Spawn1'].spawning) {
+
+        console.log(this.spawns['Spawn1'].spawning);
         console.log('building harvester');
         this.spawns['Spawn1'].createCreep(botDefinitions.harvester);
       }
