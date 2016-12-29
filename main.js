@@ -11,6 +11,14 @@ module.exports.loop = function () {
     console.log(`Room ${name} has ${Game.rooms[name].energyAvailable} energy`);
   }
 
+  //Clear screeps that don't exist memory
+  for (var name in Memory.creeps) {
+    if (!Game.creeps[name]) {
+      delete Memory.creeps[name];
+      console.log('Clearing non-existing creep memory:', name);
+    }
+  }
+
   for (let name in Game.creeps) {
     let creep = Game.creeps[name];
     if (creep.memory.role == 'harvester') {
