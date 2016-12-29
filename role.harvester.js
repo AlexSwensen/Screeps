@@ -26,7 +26,7 @@ module.exports = {
       }
       if(targets.length == 0 && creep.carry.energy == creep.carryCapacity) {
         creep.moveTo(23, 23);
-        creep.say(ladeda);
+        creep.say('ladeda');
       }
     }
   }
