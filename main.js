@@ -3,11 +3,11 @@ const roleHarvester = require('role.harvester');
 const roleUpgrader = require('role.upgrader');
 const roleBuilder = require('role.builder');
 const roleDefender = require('role.defender');
+const botFactory = require('bot.factory');
 
 
 module.exports.loop = function () {
   for (let name in Game.rooms) {
-    console.log(Game.rooms.length);
     console.log(`Room ${name} has ${Game.rooms[name].energyAvailable} energy`);
   }
 
@@ -18,6 +18,8 @@ module.exports.loop = function () {
       console.log('Clearing non-existing creep memory:', name);
     }
   }
+
+  botFactory.updateSpawns();
 
   for (let name in Game.creeps) {
     let creep = Game.creeps[name];
