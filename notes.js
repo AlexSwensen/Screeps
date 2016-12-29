@@ -17,7 +17,7 @@ Game.spawns['Spawn1'].createCreep([WORK, CARRY, CARRY, MOVE, MOVE], undefined,
 Game.spawns['Spawn1'].createCreep([WORK, CARRY, CARRY, MOVE, MOVE], 'Upgrader1',
   {role: 'upgrader'}); // memory
 
-Game.spawns['Spawn1'].createCreep([WORK, WORK, WORK, WORK, CARRY, MOVE, MOVE],
+Game.spawns['Spawn1'].createCreep([WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE],
   'HarvesterBig2',
   {role: 'harvester'});
 

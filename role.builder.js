@@ -4,6 +4,8 @@ module.exports = {
   /** @param {Creep} creep **/
   run: creep => {
 
+    console.log(JSON.stringify(this));
+
     if (creep.memory.building && creep.carry.energy == 0) {
       creep.memory.building = false;
       creep.say('harvesting');
