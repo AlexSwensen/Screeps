@@ -9,18 +9,14 @@ const roomController = {
     rooms = [];
     for (let name in Game.rooms) {
       let room = Game.rooms[name];
-      // console.log(JSON.stringify(room));
       let creeps = Game.rooms[room.name].find(FIND_MY_CREEPS);
-      // console.log(JSON.stringify(Game.rooms[room.name].find(FIND_MY_CREEPS)[0]));
       this.rooms.push(room);
       this.runRoomCreeps(room, creeps);
     }
   },
   runRoomCreeps: function (room, creeps) {
-    // console.log(JSON.stringify(creeps));
     for (let creepObj in creeps) {
       let creep = Game.creeps[creeps[creepObj].name];
-      console.log(JSON.stringify(creep));
       if (creep.memory.role == 'harvester') {
         roleHarvester.run(creep);
       }
