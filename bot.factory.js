@@ -22,7 +22,7 @@ module.exports = {
       if (!Game.spawns[this.spawns[0]].spawning) {
 
         console.log(Game.spawns[this.spawns[0]]);
-        if (Game.spawns.canCreateCreep(botDefinitions.basic.harvester.body)) {
+        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.harvester.body)) {
           Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.harvester.body,
             botDefinitions.basic.harvester.name,
             botDefinitions.basic.harvester.memory);
@@ -33,7 +33,7 @@ module.exports = {
       if (!Game.spawns[this.spawns[0]].spawning) {
 
         console.log(Game.spawns[this.spawns[0]]);
-        if (Game.spawns.canCreateCreep(botDefinitions.basic.upgrader.body)) {
+        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.upgrader.body)) {
           Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.upgrader.body,
             botDefinitions.basic.upgrader.name,
             botDefinitions.basic.upgrader.memory);
@@ -44,7 +44,7 @@ module.exports = {
       if (!Game.spawns[this.spawns[0]].spawning) {
 
         console.log(Game.spawns[this.spawns[0]]);
-        if (Game.spawns.canCreateCreep(botDefinitions.basic.builder.body)) {
+        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.builder.body)) {
           Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.builder.body,
             botDefinitions.basic.builder.name,
             botDefinitions.basic.builder.memory);
@@ -55,7 +55,7 @@ module.exports = {
       if (!Game.spawns[this.spawns[0]].spawning) {
 
         console.log(Game.spawns[this.spawns[0]]);
-        if (Game.spawns.canCreateCreep(botDefinitions.basic.defender.body)) {
+        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.defender.body)) {
           Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.defender.body,
             botDefinitions.basic.defender.name,
             botDefinitions.basic.defender.memory);
