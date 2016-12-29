@@ -8,10 +8,10 @@ Game.creeps['Upgrader1'].memory.role = 'upgrader';
 
 
 // spawn creep with memory
-Game.spawns['Spawn1'].createCreep([WORK, CARRY, CARRY, MOVE, MOVE], 'Builder1',
+Game.spawns['Spawn1'].createCreep([WORK, CARRY, CARRY, MOVE, MOVE], undefined,
   {role: 'builder'}); // memory
 
-Game.spawns['Spawn1'].createCreep([WORK, CARRY, CARRY, MOVE, MOVE], 'Builder1',
+Game.spawns['Spawn1'].createCreep([WORK, CARRY, CARRY, MOVE, MOVE], undefined,
   {role: 'harvester'}); // memory
 
 Game.spawns['Spawn1'].createCreep([WORK, CARRY, CARRY, MOVE, MOVE], 'Upgrader1',
