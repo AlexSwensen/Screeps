@@ -6,7 +6,7 @@ module.exports = {
   run: function () {
 
     this.spawns = [];
-    for(spawn in Game.spawns) {
+    for(var spawn in Game.spawns) {
       this.spawns.push(spawn);
     }
 
