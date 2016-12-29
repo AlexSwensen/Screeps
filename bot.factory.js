@@ -9,8 +9,6 @@ module.exports = {
     for(var spawn in Game.spawns) {
       this.spawns.push(spawn);
     }
-
-    console.log(this.spawns[0].spawning);
     this.creeps = {
       harvesters: _(Game.creeps).filter({memory: {role: 'harvester'}}),
       builders: _(Game.creeps).filter({memory: {role: 'builder'}}),
@@ -22,11 +20,11 @@ module.exports = {
   checkBots: function () {
     if (this.creeps.harvesters.size() < settings.harvesters) {
       console.log('we need more harvesters');
-      if (Game.spawns['Spawn1'].spawning) {
+      if (Game.spawns[this.spawns[0]].spawning) {
 
-        console.log(this.spawns['Spawn1'].spawning);
+        console.log(this.spawns[this.spawns[0]].spawning);
         console.log('building harvester');
-        Game.spawns['Spawn1'].createCreep(botDefinitions.harvester);
+        Game.spawns[this.spawns[0]].createCreep(botDefinitions.harvester);
       }
     }
   }
