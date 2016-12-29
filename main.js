@@ -2,6 +2,7 @@
 const roleHarvester = require('role.harvester');
 const roleUpgrader = require('role.upgrader');
 const roleBuilder = require('role.builder');
+const roleDefender = require('role.defender');
 
 
 module.exports.loop = function () {
@@ -20,6 +21,9 @@ module.exports.loop = function () {
     }
     if (creep.memory.role == 'builder') {
       roleBuilder.run(creep);
+    }
+    if (creep.memory.role == 'defender') {
+      roleDefender.run(creep);
     }
   }
 };
