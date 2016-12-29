@@ -1,9 +1,10 @@
 module.exports = {
   run: creep => {
-    var target = creep.room.find(FIND_HOSTILE_CREEPS);
-    if (target) {
+    creep.memory.target = creep.room.find(FIND_HOSTILE_CREEPS);
+    if (creep.memory.target) {
       creep.say('attacking!');
-      creep.moveTo(target);
+      creep.lookAt(creep.memory.target);
+      creep.moveTo(creep.memory.target);
       creep.attack();
     } else {
       say('no target');
