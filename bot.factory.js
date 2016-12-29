@@ -6,7 +6,7 @@ module.exports = {
   run: function () {
 
     this.spawns = [];
-    for(var spawn in Game.spawns) {
+    for (var spawn in Game.spawns) {
       this.spawns.push(spawn);
     }
     this.creeps = {
@@ -24,7 +24,9 @@ module.exports = {
 
         console.log(Game.spawns[this.spawns[0]]);
         console.log('building harvester');
-        Game.spawns['Spawn1'].createCreep(botDefinitions.harvester.body, botDefinitions.harvester.name, botDefinitions.harvester.memory);
+        Game.spawns['Spawn1'].createCreep(botDefinitions.basic.harvester.body,
+          botDefinitions.basic.harvester.name,
+          botDefinitions.basic.harvester.memory);
       }
     }
   }
