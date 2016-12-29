@@ -19,14 +19,47 @@ module.exports = {
   },
   checkBots: function () {
     if (this.creeps.harvesters.size() < settings.harvesters) {
-      console.log('we need more harvesters');
       if (!Game.spawns[this.spawns[0]].spawning) {
 
         console.log(Game.spawns[this.spawns[0]]);
-        console.log('building harvester');
-        Game.spawns['Spawn1'].createCreep(botDefinitions.basic.harvester.body,
-          botDefinitions.basic.harvester.name,
-          botDefinitions.basic.harvester.memory);
+        if (Game.spawns.canCreateCreep(botDefinitions.basic.harvester.body)) {
+          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.harvester.body,
+            botDefinitions.basic.harvester.name,
+            botDefinitions.basic.harvester.memory);
+        }
+      }
+    }
+    if (this.creeps.upgraders.size() < settings.upgraders) {
+      if (!Game.spawns[this.spawns[0]].spawning) {
+
+        console.log(Game.spawns[this.spawns[0]]);
+        if (Game.spawns.canCreateCreep(botDefinitions.basic.upgrader.body)) {
+          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.upgrader.body,
+            botDefinitions.basic.upgrader.name,
+            botDefinitions.basic.upgrader.memory);
+        }
+      }
+    }
+    if (this.creeps.builders.size() < settings.builders) {
+      if (!Game.spawns[this.spawns[0]].spawning) {
+
+        console.log(Game.spawns[this.spawns[0]]);
+        if (Game.spawns.canCreateCreep(botDefinitions.basic.builder.body)) {
+          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.builder.body,
+            botDefinitions.basic.builder.name,
+            botDefinitions.basic.builder.memory);
+        }
+      }
+    }
+    if (this.creeps.defenders.size() < settings.defenders) {
+      if (!Game.spawns[this.spawns[0]].spawning) {
+
+        console.log(Game.spawns[this.spawns[0]]);
+        if (Game.spawns.canCreateCreep(botDefinitions.basic.defender.body)) {
+          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.defender.body,
+            botDefinitions.basic.defender.name,
+            botDefinitions.basic.defender.memory);
+        }
       }
     }
   }
