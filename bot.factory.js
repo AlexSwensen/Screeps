@@ -20,7 +20,7 @@ module.exports = {
   checkBots: function () {
     if (this.creeps.harvesters.size() < settings.harvesters) {
       console.log('we need more harvesters');
-      if (Game.spawns[this.spawns[0]].spawning) {
+      if (!Game.spawns[this.spawns[0]].spawning) {
 
         console.log(Game.spawns[this.spawns[0]].spawning);
         console.log('building harvester');
