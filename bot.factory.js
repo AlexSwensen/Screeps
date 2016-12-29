@@ -21,34 +21,34 @@ module.exports = {
     if (this.creeps.harvesters.size() < settings.harvesters) {
       if (!Game.spawns[this.spawns[0]].spawning) {
 
-        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.harvester.body) == OK) {
-          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.harvester.body,
-            botDefinitions.basic.harvester.name,
-            botDefinitions.basic.harvester.memory);
+        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.harvester[0].body) == OK) {
+          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.harvester[0].body,
+            botDefinitions.basic.harvester[0].name,
+            botDefinitions.basic.harvester[0].memory);
         }
       }
     } else if (this.creeps.upgraders.size() < settings.upgraders) {
       if (!Game.spawns[this.spawns[0]].spawning) {
-        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.upgrader.body) == OK) {
-          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.upgrader.body,
-            botDefinitions.basic.upgrader.name,
-            botDefinitions.basic.upgrader.memory);
+        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.upgrader[0].body) == OK) {
+          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.upgrader[0].body,
+            botDefinitions.basic.upgrader[0].name,
+            botDefinitions.basic.upgrader[0].memory);
         }
       }
     } else if (this.creeps.builders.size() < settings.builders) {
       if (!Game.spawns[this.spawns[0]].spawning) {
-        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.builder.body) == OK) {
-          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.builder.body,
-            botDefinitions.basic.builder.name,
-            botDefinitions.basic.builder.memory);
+        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.builder[0].body) == OK) {
+          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.builder[0].body,
+            botDefinitions.basic.builder[0].name,
+            botDefinitions.basic.builder[0].memory);
         }
       }
     } else if (this.creeps.defenders.size() < settings.defenders) {
       if (!Game.spawns[this.spawns[0]].spawning) {
-        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.defender.body) == OK) {
-          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.defender.body,
-            botDefinitions.basic.defender.name,
-            botDefinitions.basic.defender.memory);
+        if (Game.spawns[this.spawns[0]].canCreateCreep(botDefinitions.basic.defender[0].body) == OK) {
+          Game.spawns[this.spawns[0]].createCreep(botDefinitions.basic.defender[0].body,
+            botDefinitions.basic.defender[0].name,
+            botDefinitions.basic.defender[0].memory);
         }
       }
     }
