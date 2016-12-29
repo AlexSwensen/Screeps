@@ -6,7 +6,7 @@ module.exports = {
       creep.moveTo(creep.memory.target[0]);
       creep.attack();
     } else {
-      say('no target');
+      creep.moveTo(creep.room.find(STRUCTURE_SPAWN)[0]);
     }
 
   }
