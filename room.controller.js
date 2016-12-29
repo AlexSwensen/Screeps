@@ -16,8 +16,8 @@ const roomController = {
       this.runRoomCreeps(room, creeps);
     }
   },
-  runRoomCreeps: function (room) {
-    for (let name in room.creeps) {
+  runRoomCreeps: function (room, creeps) {
+    for (let name in creeps) {
       console.log(name);
       let creep = room.creeps[name];
       // console.log(JSON.stringify(creep));
