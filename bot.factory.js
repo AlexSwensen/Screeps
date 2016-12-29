@@ -10,7 +10,7 @@ module.exports = {
       this.spawns.push(spawn);
     }
 
-    console.log(this.spawns[0]);
+    console.log(this.spawns[0].spawning);
     this.creeps = {
       harvesters: _(Game.creeps).filter({memory: {role: 'harvester'}}),
       builders: _(Game.creeps).filter({memory: {role: 'builder'}}),
