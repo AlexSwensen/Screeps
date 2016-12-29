@@ -7,7 +7,7 @@ module.exports.loop = function () {
   //Clear screeps that don't exist memory
   for (var name in Memory.creeps) {
     if (!Game.creeps[name]) {
-      const creepMem = Memory.creep[name];
+      const creepMem = Memory.creeps[name];
       console.log(JSON.stringify(creepMem));
       delete Memory.creeps[name];
       console.log(`Clearing non-existing creep memory: ${name} Type: `);
