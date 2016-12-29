@@ -12,11 +12,11 @@ const roomController = {
       console.log(`Room ${room.name} has ${room.energyAvailable} energy`);
       let creeps = Game.rooms[room.name].find(FIND_MY_CREEPS);
       this.rooms.push(room);
-      this.runRoomCreeps(room, creeps);
+      this.runRoomCreeps(creeps);
 
     }
   },
-  runRoomCreeps: function (room, creeps) {
+  runRoomCreeps: function (creeps) {
     creeps.forEach (function(creep){
       if (creep.memory.role == 'harvester') {
         roleHarvester.run(creep);
