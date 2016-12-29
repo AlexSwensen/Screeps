@@ -7,7 +7,7 @@ module.exports = {
       creep.attack();
     } else {
       creep.memory.destination = creep.room.find(STRUCTURE_CONTROLLER);
-      creep.moveTo(creep.memory.destination);
+      creep.moveTo(creep.memory.destination[0]);
     }
 
   }
