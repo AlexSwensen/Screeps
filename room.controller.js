@@ -11,6 +11,7 @@ const roomController = {
       let room = Game.rooms[name];
       room.creeps = Game.rooms[room.name].find(FIND_MY_CREEPS);
       this.rooms.push(room);
+      console.log(JSON.stringify(room));
       // this.runRoomCreeps(room);
     }
   },
