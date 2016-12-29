@@ -2,8 +2,8 @@ module.exports = {
   run: creep => {
     creep.memory.target = creep.room.find(FIND_HOSTILE_CREEPS);
     if (creep.memory.target[0]) {
-      if (creep.memory.target[0].body.includes({type: RANGED_ATTACK})) {
-
+      if (_.some(creep.memory.target[0].body, {type: RANGED_ATTACK})) {
+        creep.say('hope he doesnt come this way.');
       } else {
         creep.say('attacking!');
         creep.moveTo(creep.memory.target[0]);
