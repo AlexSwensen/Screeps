@@ -10,8 +10,8 @@ const roomController = {
     for (let name in Game.rooms) {
       let room = Game.rooms[name];
       room.creeps = Game.rooms[room.name].find(FIND_MY_CREEPS);
-      rooms.push(room);
-      this.runRoomCreeps(room);
+      this.rooms.push(room);
+      // this.runRoomCreeps(room);
     }
   },
   runRoomCreeps: function (room) {
