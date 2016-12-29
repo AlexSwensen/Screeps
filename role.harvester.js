@@ -22,6 +22,9 @@ module.exports = {
           creep.moveTo(targets[0]);
         }
       }
+      if(targets.length == 0 && creep.carry.energy == creep.carryCapacity) {
+        creep.moveTo(23, 23)
+      }
     }
   }
 };
