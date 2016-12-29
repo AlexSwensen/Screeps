@@ -9,9 +9,11 @@ const roomController = {
     rooms = [];
     for (let name in Game.rooms) {
       let room = Game.rooms[name];
+      console.log(`Room ${room.name} has ${room.energyAvailable} energy`);
       let creeps = Game.rooms[room.name].find(FIND_MY_CREEPS);
       this.rooms.push(room);
       this.runRoomCreeps(room, creeps);
+
     }
   },
   runRoomCreeps: function (room, creeps) {
