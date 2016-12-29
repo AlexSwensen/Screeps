@@ -1,4 +1,4 @@
-modules.exports = {
+module.exports = {
   builders: 2,
   harvesters: 2,
   defenders: 2,
