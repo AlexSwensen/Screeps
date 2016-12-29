@@ -5,7 +5,7 @@ module.exports = {
     this.spawns = Game.spawns;
     this.creeps = Game.creeps;
   },
-  run: () => {
+  run: function() {
     this.update();
     console.log(`you have ${this.creeps.length} units`);
   }
