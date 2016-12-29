@@ -10,6 +10,6 @@ module.exports = {
       defenders: _(Game.creeps).filter({memory: {role: 'defenders'}}),
       upgraders: _(Game.creeps).filter({memory: {role: 'upgraders'}})
     };
-    console.log(`you have ${this.creeps.defenders.count()} defenders`);
+    console.log(`you have ${this.creeps.defenders.size()} defenders`);
   }
 };
