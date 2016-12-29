@@ -1,8 +1,4 @@
 /* Main */
-const roleHarvester = require('role.harvester');
-const roleUpgrader = require('role.upgrader');
-const roleBuilder = require('role.builder');
-const roleDefender = require('role.defender');
 const botFactory = require('bot.factory');
 const roomController = require('room.controller');
 
