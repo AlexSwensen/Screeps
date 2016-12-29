@@ -11,6 +11,8 @@ module.exports.loop = function () {
     console.log(`Room ${name} has ${Game.rooms[name].energyAvailable} energy`);
   }
 
+  botFactory.run();
+
   //Clear screeps that don't exist memory
   for (var name in Memory.creeps) {
     if (!Game.creeps[name]) {
