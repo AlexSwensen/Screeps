@@ -1,19 +1,23 @@
 const settings = require('settings');
+const botDefinitions = require('bot.definitions');
 module.exports = {
   spawns: Game.spawns,
   creeps: [],
   run: function () {
     this.spawns = Game.spawns;
     this.creeps = {
-      harvesters: _(Game.creeps).filter({memory: {role: 'harveste'}}),
+      harvesters: _(Game.creeps).filter({memory: {role: 'harvester'}}),
       builders: _(Game.creeps).filter({memory: {role: 'builder'}}),
       defenders: _(Game.creeps).filter({memory: {role: 'defender'}}),
       upgraders: _(Game.creeps).filter({memory: {role: 'upgrader'}})
     };
-
+    this.checkBots();
+  },
+  checkBots: function () {
     if (this.creeps.harvesters.size() < settings.harvesters) {
-      console.log('you dont have enough!');
+      if (!this.spawns['Spawn1'].spawning) {
+        this.spawns['Spawn1'].createCreep(botDefinitions.harvester);
+      }
     }
-    console.log(`you have ${this.creeps.defenders.size()} defenders`);
   }
 };
