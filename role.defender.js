@@ -11,6 +11,7 @@ module.exports = {
           return structure.structureType == STRUCTURE_CONTROLLER;
         }
       });
+
       creep.moveTo(creep.memory.destination[0]);
     }
 

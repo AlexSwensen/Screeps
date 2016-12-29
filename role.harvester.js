@@ -22,6 +22,10 @@ module.exports = {
           creep.moveTo(targets[0]);
         }
       }
+
+      if (!targets) {
+        creep.moveTo(10, 10);
+      }
     }
   }
 };
