@@ -7,7 +7,7 @@ module.exports.loop = function () {
 
   memoryController.removeDeadCreeps();
 
-  botFactory.run(); // Keeps our but quota up
+  botFactory.run(); // Keeps our bot quota up
 
   roomController.run(); // Manages rooms and bots.
 

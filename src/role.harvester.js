@@ -35,8 +35,7 @@ var roleHarvester = {
       }
     }
     if (creep.memory.storageTargets.length == 0 && creep.carry.energy == creep.carryCapacity) {
-      creep.moveTo(23, 23);
-      creep.say('fa-la-la');
+      this.standby(creep)
     }
   },
   findStorageTargets: function (creep) {
@@ -49,6 +48,10 @@ var roleHarvester = {
           structure.energy < structure.energyCapacity;
       }
     });
+  },
+  standby: function(creep) {
+    creep.moveTo(creep.room.find(FIND_MY_SPAWNS)[0]);
+    creep.say('la-de-da');
   }
 };
 
