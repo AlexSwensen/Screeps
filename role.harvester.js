@@ -28,13 +28,13 @@ var roleHarvester = {
     }
   },
   storeEnergy: function (creep) {
-    creep.memory.storageTarget = this.findStorageTargets(creep);
-    if (creep.memory.storageTarget.length > 0) {
-      if (creep.transfer(creep.memory.storageTarget, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-        creep.moveTo(creep.memory.storageTarget);
+    creep.memory.storageTargets = this.findStorageTargets(creep);
+    if (creep.memory.storageTargets.length > 0) {
+      if (creep.transfer(creep.memory.storageTargets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+        creep.moveTo(creep.memory.storageTargets[0]);
       }
     }
-    if (creep.memory.storageTarget.length == 0 && creep.carry.energy == creep.carryCapacity) {
+    if (creep.memory.storageTargets.length == 0 && creep.carry.energy == creep.carryCapacity) {
       creep.moveTo(23, 23);
       creep.say('fa-la-la');
     }
