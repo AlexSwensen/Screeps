@@ -17,7 +17,7 @@ const roomController = {
     }
   },
   runRoomCreeps: function (creeps) {
-    creeps.forEach(function (creep) {
+    creeps.forEach(creep => {
       this.assignCreep(creep);
     })
   },
