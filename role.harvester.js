@@ -1,6 +1,7 @@
 /** role.harvester */
 var roleHarvester = {
-  run: creep => {
+
+  run: function (creep) {
     this.checkEnergy(creep); // check our energy
 
     if (creep.memory.harvesting) {
@@ -10,7 +11,7 @@ var roleHarvester = {
       this.storeEnergy(creep);
     }
   },
-  checkEnergy: creep => {
+  checkEnergy: function (creep) {
     if (creep.memory.harvesting && creep.carry.energy == creep.carryCapacity) {
       creep.memory.harvesting = false;
       creep.say('storing');
@@ -20,13 +21,13 @@ var roleHarvester = {
       creep.say('harvesting');
     }
   },
-  harvest: creep => {
+  harvest: function (creep) {
     creep.memory.energySource = creep.pos.findClosestByRange(FIND_SOURCES);
     if (creep.harvest(creep.memory.energySource) == ERR_NOT_IN_RANGE) {
       creep.moveTo(creep.memory.energySource);
     }
   },
-  storeEnergy: creep => {
+  storeEnergy: function (creep) {
     creep.memory.storageTargets = creep.room.find(FIND_STRUCTURES, {
       filter: (structure) => {
         return (structure.structureType == STRUCTURE_EXTENSION ||
