@@ -18,6 +18,7 @@ module.exports = {
     this.checkBots();
   },
   checkBots: function () {
+    // this is extremely messy and doesn't play nice with different rooms.
     if (this.creeps.harvesters.size() < settings.harvesters) {
       if (!Game.spawns[this.spawns[0]].spawning) {
 
