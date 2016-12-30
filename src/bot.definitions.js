@@ -2,21 +2,21 @@ module.exports = {
   basic: {
     harvester: [
       {
-        body: [WORK, WORK, CARRY, MOVE],
+        body: [WORK, CARRY, CARRY, MOVE, MOVE],
         name: undefined,
         memory: {role: 'harvester'}
       }
     ],
     upgrader: [
       {
-        body: [WORK, WORK, CARRY, MOVE],
+        body: [WORK, CARRY, CARRY, MOVE, MOVE],
         name: undefined,
         memory: {role: 'upgrader'}
       }
     ],
     builder: [
       {
-        body: [WORK, WORK, CARRY, MOVE],
+        body: [WORK, CARRY, CARRY, MOVE, MOVE],
         name: undefined,
         memory: {role: 'builder'}
       }
