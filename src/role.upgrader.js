@@ -21,10 +21,13 @@ var roleUpgrader = {
     }
     else {
       var source = this.findEnergySource(creep);
-      if (source.structureType) {
+      if (source && source.structureType) {
         this.harvestEnergyStorage(creep, source);
-      } else {
+      } else if (source) {
         this.harvestEnergySource(creep, source)
+      } else {
+        // something wrong is going on if we get here.
+        creep.say('lol nope');
       }
     }
   },
@@ -36,7 +39,11 @@ var roleUpgrader = {
       }
     });
 
-    return container || source;
+    if (container) {
+      return container
+    } else {
+      return source
+    }
   },
   harvestEnergySource: function (creep, source) {
     if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
