@@ -1,0 +1,26 @@
+{
+  "name": "screeps",
+  "version": "1.0.0",
+  "description": "The goal is simple: Unite the server under one flag.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexSwensen/Screeps.git"
+  },
+  "keywords": [
+    "screeps"
+  ],
+  "author": "Alexander Swensen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexSwensen/Screeps/issues"
+  },
+  "homepage": "https://github.com/AlexSwensen/Screeps#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-screeps": "^1.0.3"
+  }
+}
