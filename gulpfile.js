@@ -7,5 +7,5 @@ gulp.task('watch', function() {
   gulp.watch('src/*.js', ['screeps']);
 });
 gulp.task('screeps', function() {
-  gulp.src('*.js').pipe(screeps(credentials));
+  gulp.src('src/*.js').pipe(screeps(credentials));
 });

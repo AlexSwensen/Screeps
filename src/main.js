@@ -4,6 +4,8 @@ const roomController = require('room.controller');
 
 module.exports.loop = function () {
 
+
+  console.log('hello!');
   //Clear screeps that don't exist memory
   for (var name in Memory.creeps) {
     if (!Game.creeps[name]) {
