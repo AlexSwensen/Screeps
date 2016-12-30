@@ -21,6 +21,7 @@
   "homepage": "https://github.com/AlexSwensen/Screeps#readme",
   "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-screeps": "^1.0.3"
+    "gulp-screeps": "^1.0.3",
+    "lodash": "^4.17.3"
   }
 }
