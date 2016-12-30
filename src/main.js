@@ -1,21 +1,14 @@
 /* Main */
 const botFactory = require('bot.factory');
 const roomController = require('room.controller');
+const memoryController = require('memory.controller');
 
 module.exports.loop = function () {
 
-  //Clear screeps that don't exist memory
-  for (var name in Memory.creeps) {
-    if (!Game.creeps[name]) {
-      const creepMem = Memory.creeps[name];
-      delete Memory.creeps[name];
-      console.log(`Clearing non-existing creep memory: ${name}`);
-      console.log(`Role: ${creepMem.role}`);
-    }
-  }
+  memoryController.removeDeadCreeps();
 
-  botFactory.run();
+  botFactory.run(); // Keeps our but quota up
 
-  roomController.run();
+  roomController.run(); // Manages rooms and bots.
 
 };
