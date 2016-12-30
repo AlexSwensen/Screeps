@@ -28,15 +28,7 @@ var roleHarvester = {
     }
   },
   storeEnergy: function (creep) {
-    creep.memory.storageTargets = creep.room.find(FIND_STRUCTURES, {
-      filter: (structure) => {
-        return (structure.structureType == STRUCTURE_EXTENSION ||
-          structure.structureType == STRUCTURE_SPAWN ||
-          structure.structureType == STRUCTURE_TOWER ||
-          structure.structureType == STRUCTURE_CONTAINER) &&
-          structure.energy < structure.energyCapacity;
-      }
-    });
+    creep.memory.storageTargets = this.findStorageTargets();
     if (creep.memory.storageTargets.length > 0) {
       if (creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
         creep.moveTo(targets[0]);
@@ -46,6 +38,17 @@ var roleHarvester = {
       creep.moveTo(23, 23);
       creep.say('ladeda');
     }
+  },
+  findStorageTargets: function (creep) {
+    return creep.room.find(FIND_STRUCTURES, {
+      filter: (structure) => {
+        return (structure.structureType == STRUCTURE_EXTENSION ||
+          structure.structureType == STRUCTURE_SPAWN ||
+          structure.structureType == STRUCTURE_TOWER ||
+          structure.structureType == STRUCTURE_CONTAINER) &&
+          structure.energy < structure.energyCapacity;
+      }
+    });
   }
 };
 
