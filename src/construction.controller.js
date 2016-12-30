@@ -37,7 +37,6 @@ const constructionController = {
 
       const buildLocation = new RoomPosition(location.x, location.y, room.name);
       this.buildRoadUnit(room, buildLocation);
-      console.log(JSON.stringify(location));
     })
   },
   buildRoadUnit: function (room, pos) {
