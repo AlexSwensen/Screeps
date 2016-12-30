@@ -39,7 +39,10 @@ const roomController = {
     }
   },
   buildStructures(room) {
-    constructionController.init(room);
+    // if this room is mine, build shit.
+    if (room.controller.my) {
+      constructionController.init(room);
+    }
   }
 };
 

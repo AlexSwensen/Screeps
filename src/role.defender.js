@@ -1,21 +1,26 @@
+//Todo: make this not freak out in enemy rooms.
+
 var roleDefender = {
   run: function (creep) {
     this.findTargets(creep);
-    this.goToFlag(creep);
-    this.attackTargets(creep);
-    this.goToController(creep);
+    if (creep.memory.targetCreeps.length == 0 && creep.memory.targetStructures.length == 0 && creep.memory.flag) {
+      this.goToFlag(creep);
+    } else {
+      this.goToController(creep);
+      this.attackTargets(creep);
+    }
   },
   findTargets: function (creep) {
     creep.memory.targetCreeps = creep.room.find(FIND_HOSTILE_CREEPS);
     creep.memory.targetStructures = creep.room.find(FIND_HOSTILE_STRUCTURES);
+    creep.memory.flag = Game.flags['attack'];
   },
   attackTargets: function (creep) {
+    creep.say('attacking');
     if (creep.memory.targetCreeps) {
       this.attackTarget(creep, creep.memory.targetCreeps[0]);
     } else if (creep.memory.targetStructures) {
       this.attackTarget(creep, creep.memory.targetStructures[0]);
-    } else {
-
     }
   },
   attackTarget: function (creep, target) {
@@ -24,21 +29,12 @@ var roleDefender = {
     }
   },
   goToController: function (creep) {
+    creep.say('going home');
     creep.moveTo(creep.room.controller.pos);
   },
   goToFlag: function (creep) {
-    creep.memory.flag = _(Game.flags).filter(flag => {
-      return flag.name = 'attack';
-    }).value()[0];
     if (creep.memory.flag) {
-      /**
-       * buggy code
-       */
-      console.log(JSON.stringify(creep.memory.flag));
-      creep.memory.destination = new RoomPosition(creep.memory.flag.pos.x, creep.memory.flag.pos.y, creep.memory.flag.pos.roomName);
-      // creep.memory.path = creep.room.findPath(creep.pos, creep.memory.flag.pos, {array: true});
-      // console.log(creep.moveByPath(creep.memory.path));
-      console.log(creep.moveTo(creep.memory.destination));
+      creep.moveTo(creep.memory.flag);
     }
   }
 };
