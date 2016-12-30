@@ -42,15 +42,16 @@ var roleHarvester = {
     return creep.room.find(FIND_STRUCTURES, {
       filter: (structure) => {
         return ((structure.structureType == STRUCTURE_EXTENSION ||
-          structure.structureType == STRUCTURE_SPAWN ||
-          structure.structureType == STRUCTURE_TOWER) &&
-          structure.energy < structure.energyCapacity) ||
-          (structure.structureType == STRUCTURE_CONTAINER &&
-          _(structure.store).sum() < structure.storeCapacity)
+        structure.structureType == STRUCTURE_SPAWN ||
+        structure.structureType == STRUCTURE_TOWER));
+        //&&
+        // structure.energy < structure.energyCapacity) ||
+        // (structure.structureType == STRUCTURE_CONTAINER &&
+        // _(structure.store).sum() < structure.storeCapacity)
       }
     });
   },
-  standby: function(creep) {
+  standby: function (creep) {
     creep.moveTo(creep.room.find(FIND_MY_SPAWNS)[0]);
     creep.say('la-de-da');
   }
