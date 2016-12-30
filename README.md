@@ -6,6 +6,8 @@ We will probably not reach that goal, but we shall try.
 PR's are welcome.
 
 ## Notes
+Code is under the `src` directory. Everything else is workflow related.
+
 For now each bot type has a role with it's associated code.
 
 Bots are built from the `bot.definitions.js` file.
