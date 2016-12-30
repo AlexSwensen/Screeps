@@ -6,7 +6,7 @@ var roleHarvester = {
       creep.memory.harvesting = false;
       creep.say('storing');
     }
-    else if (!creep.memory.harvesting && creep.carry.energy < creep.carryCapacity) {
+    else if (!creep.memory.harvesting && creep.carry.energy == 0) {
       creep.memory.harvesting = true;
       creep.say('harvesting');
     }
