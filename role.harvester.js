@@ -28,10 +28,10 @@ var roleHarvester = {
     }
   },
   storeEnergy: function (creep) {
-    creep.memory.storageTargets = this.findStorageTargets(creep);
-    if (creep.memory.storageTargets.length > 0) {
-      if (creep.transfer(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-        creep.moveTo(targets[0]);
+    creep.memory.storageTarget = this.findStorageTargets(creep);
+    if (creep.memory.storageTarget.length > 0) {
+      if (creep.transfer(creep.memory.storageTarget, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+        creep.moveTo(creep.memory.storageTarget);
       }
     }
     if (creep.memory.storageTargets.length == 0 && creep.carry.energy == creep.carryCapacity) {
