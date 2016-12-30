@@ -18,21 +18,24 @@ const roomController = {
   },
   runRoomCreeps: function (creeps) {
     creeps.forEach(function (creep) {
-      switch (creep.memory.role) {
-        case 'harvester':
-          roleHarvester.run(creep);
-          break;
-        case 'upgrader':
-          roleUpgrader.run(creep);
-          break;
-        case 'builder':
-          roleBuilder.run(creep);
-          break;
-        case 'defender':
-          roleDefender.run(creep);
-          break;
-      }
+      this.assignCreep(creep);
     })
+  },
+  assignCreep: function (creep) {
+    switch (creep.memory.role) {
+      case 'harvester':
+        roleHarvester.run(creep);
+        break;
+      case 'upgrader':
+        roleUpgrader.run(creep);
+        break;
+      case 'builder':
+        roleBuilder.run(creep);
+        break;
+      case 'defender':
+        roleDefender.run(creep);
+        break;
+    }
   }
 };
 
