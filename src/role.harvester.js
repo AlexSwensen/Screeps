@@ -22,7 +22,7 @@ var roleHarvester = {
     }
   },
   harvest: function (creep) {
-    creep.memory.energySource = creep.pos.findClosestByRange(FIND_SOURCES);
+    creep.memory.energySource = creep.pos.findClosestByPath(FIND_SOURCES);
     if (creep.harvest(creep.memory.energySource) == ERR_NOT_IN_RANGE) {
       creep.moveTo(creep.memory.energySource);
     }

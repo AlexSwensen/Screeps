@@ -29,8 +29,8 @@ var roleUpgrader = {
     }
   },
   findEnergySource: function (creep) {
-    const source = creep.pos.findClosestByRange(FIND_SOURCES);
-    const container = creep.pos.findClosestByRange(FIND_STRUCTURES, {
+    const source = creep.pos.findClosestByPath(FIND_SOURCES);
+    const container = creep.pos.findClosestByPath(FIND_STRUCTURES, {
       filter: structure => {
         return (structure.structureType == STRUCTURE_CONTAINER && _(structure.store).sum() > 0) && creep.room.name == structure.room.name;
       }
