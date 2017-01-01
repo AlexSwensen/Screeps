@@ -1,4 +1,14 @@
 /** role.harvester */
+
+class Harvester extends Creep {
+  constructor() {
+
+  }
+  get type () {
+    return this.memory;
+  }
+}
+
 var roleHarvester = {
 
   run: function (creep) {
@@ -56,7 +66,7 @@ var roleHarvester = {
     });
   },
   standby: function (creep) {
-    creep.moveTo(creep.room.find(FIND_MY_SPAWNS)[0]);
+    creep.moveTo(25, 25);
     creep.say('la-de-da');
   }
 };

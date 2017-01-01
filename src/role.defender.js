@@ -7,7 +7,9 @@ var roleDefender = {
       this.goToFlag(creep);
     } else {
       this.goToController(creep);
-      this.attackTargets(creep);
+      if (this.shouldAttackTargets(creep)) {
+        this.attackTarget(creep, creep.memory.attackTarget);
+      }
     }
   },
   findTargets: function (creep) {
@@ -15,15 +17,17 @@ var roleDefender = {
     creep.memory.targetStructures = creep.room.find(FIND_HOSTILE_STRUCTURES);
     creep.memory.flag = Game.flags['attack'];
   },
-  attackTargets: function (creep) {
-    creep.say('attacking');
-    if (creep.memory.targetCreeps) {
-      this.attackTarget(creep, creep.memory.targetCreeps[0]);
-    } else if (creep.memory.targetStructures) {
-      this.attackTarget(creep, creep.memory.targetStructures[0]);
+  shouldAttackTargets: function (creep) {
+    if (creep.memory.targetCreeps.length || creep.memory.targetStructures.length) {
+      creep.memory.attackTarget = creep.memory.targetCreeps[0] || creep.memory.targetStructures[0];
+      return true;
+    }
+    else {
+      return false;
     }
   },
   attackTarget: function (creep, target) {
+    creep.say('attacking');
     if (creep.attack(target) == ERR_NOT_IN_RANGE) {
       creep.moveTo(target);
     }

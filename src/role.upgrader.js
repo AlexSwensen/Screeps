@@ -27,6 +27,10 @@ var roleUpgrader = {
         this.harvestEnergySource(creep, source)
       } else {
         // something wrong is going on if we get here.
+        /*
+        It also seems we get here if we have no open energy nodes.
+        TODO: We should build a common function to manage energy harvesting, storage, and which sources should be prioritized.
+         */
         creep.say('lol nope');
       }
     }

@@ -1,6 +1,4 @@
-/** role.builder */
-module.exports = {
-
+var roleBuilder = {
   /** @param {Creep} creep **/
   run: creep => {
 
@@ -21,6 +19,9 @@ module.exports = {
           creep.moveTo(creep.memory.targets[0]);
         }
       }
+      else {
+        creep.moveTo(25, 25);
+      }
     }
     else {
       creep.memory.energySource = creep.pos.findClosestByPath(FIND_SOURCES);
@@ -30,3 +31,4 @@ module.exports = {
     }
   }
 };
+module.exports = roleBuilder;
