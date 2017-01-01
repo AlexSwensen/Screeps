@@ -1,14 +1,5 @@
 /** role.harvester */
 
-class Harvester extends Creep {
-  constructor() {
-
-  }
-  get type () {
-    return this.memory;
-  }
-}
-
 var roleHarvester = {
 
   run: function (creep) {
@@ -22,7 +13,7 @@ var roleHarvester = {
     }
   },
   checkEnergy: function (creep) {
-    if (creep.memory.harvesting && creep.carry.energy == creep.carryCapacity) {
+    if (creep.memory.harvesting && creep.carryTotal == creep.carryCapacity) {
       creep.memory.harvesting = false;
       creep.say('storing');
     }
