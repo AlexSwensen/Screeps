@@ -29,8 +29,12 @@ let areaSearch = {
     const area = this.createArea(room, targetPos, areaOffset);
     return room.lookAtArea(area.top, area.left, area.bottom, area.right, asArray);
   },
-  searchAreaFor: function (room, thing, areaObj, asArray = false) {
-    return room.lookForAtArea(thing, areaObj.top, areaObj.left, areaObj.bottom, areaobj.right, asArray);
+  searchAreaFor: function (room, thing, targetPos, areaOffset, asArray = false) {
+    const area = this.createArea(room, targetPos, areaOffset);
+    console.log(JSON.stringify(area));
+    const search = room.lookForAtArea(thing, area.top, area.left, area.bottom, area.right, asArray);
+    console.log(JSON.stringify(search));
+    return search;
   },
   /**
    *
@@ -40,15 +44,15 @@ let areaSearch = {
    * @returns {{top: (*|Number), right: (*|Number), bottom: (*|Number), left: (*|Number)}}
    */
   createArea: function (room, targetPos, areaOffset) {
-    if (!(areaOffset > 0)) {
+    if (areaOffset < 0) {
       // console.error('Area must be greater than 0');
       // return?
     }
     const areaObj = {
-      top: this.sanitizeBoundCoord(targetPos.y + areaOffset),
-      right: this.sanitizeBoundCoord(targetPos.x + areaOffset),
-      bottom: this.sanitizeBoundCoord(targetPos.y - areaOffset),
-      left: this.sanitizeBoundCoord(targetPos.x - areaOffset)
+      top: this.sanitizeBoundCoord(targetPos.y - areaOffset),
+      left: this.sanitizeBoundCoord(targetPos.x - areaOffset),
+      bottom: this.sanitizeBoundCoord(targetPos.y + areaOffset),
+      right: this.sanitizeBoundCoord(targetPos.x + areaOffset)
     };
 
     return areaObj;
@@ -63,12 +67,11 @@ let areaSearch = {
   sanitizeBoundCoord: function (value) {
     if (value > constants.roomTrueSize) {
       return constants.roomTrueSize;
-    }
-    if (value < 0) {
+    } else if (value < 0) {
       return 0;
     }
     else {
-      return 0;
+      return value;
     }
   }
 };

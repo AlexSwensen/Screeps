@@ -1,5 +1,6 @@
 /* Main */
 require('prototype.creep');
+require('prototype.source');
 const botFactory = require("bot.factory");
 const roomController = require('room.controller');
 const memoryController = require('memory.controller');
